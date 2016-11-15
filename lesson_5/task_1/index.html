@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Lesson 5 To Do</title>
+    <script src="script.js"></script>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <h2>To Do List: </h2>
+    <ul id="list"></ul>
+
+
+    <input name="title" type="text" placeholder = "Type something…";>
+    <button id="dynamicButton" onclick="addItem()">Add</button>
+    <button onclick="removeItem()">Remove</button>
+    <button onclick="archiveItem()">Send to archive</button>
+    <button id="showArchive" onclick="showArchive()">Show archive</button>
+
+    <ul id="archivedList" style="display:none;"><h3>Archived items:</h3></ul>
+
+</body>
+</html>
