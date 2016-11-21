@@ -16,7 +16,6 @@ function addItem() {
             li.innerText = input.value;
             li.onclick = clicked;
             input.value = '';
-
             li.appendChild(checkbox);
             ul.appendChild(li);
 
@@ -28,7 +27,6 @@ function addItem() {
             mode = 'Add';
             document.getElementById('dynamicButton').innerText = mode;
         }
-
     }
 }
 
@@ -42,14 +40,15 @@ function removeItem() {
 }
 
 function clicked() {
-    el = event.toElement;
+    if (target.tagName != 'li') return;
+    el = event.target;
     [].forEach.call(el.parentElement.children, function (el) {
         el.id = ('');
         el.classList.remove('edit');
     });
-    el.id = ('remove');
-    el.classList.add('edit');
 
+    el.classList.add('edit');
+    el.id = ('remove');
     var input = document.getElementsByName('title')[0];
 
     input.value = el.innerText;
