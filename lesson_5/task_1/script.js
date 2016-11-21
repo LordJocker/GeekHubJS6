@@ -40,13 +40,12 @@ function removeItem() {
 }
 
 function clicked() {
-    if (target.tagName != 'li') return;
-    el = event.target;
+    el = event.toElement;
+    if (this.tagName == 'input') return;
     [].forEach.call(el.parentElement.children, function (el) {
         el.id = ('');
         el.classList.remove('edit');
     });
-
     el.classList.add('edit');
     el.id = ('remove');
     var input = document.getElementsByName('title')[0];
