@@ -1,10 +1,10 @@
 body {
-  font-family: Helvetica, sans-serif;
+  font-family: sans-serif, Helvetica;
   position: absolute;
   padding: 0 20px;
   text-align: center;
   margin: 0 auto;
-
+  width: 700px;
 }
 
 @mixin greenGradient() {
@@ -20,11 +20,9 @@ body {
     margin: 3% 7% 4% 7%;
     padding: 0% 0% 1% 3%;
     font-size: 20px;
-    font-family: serif;
-    font-weight: lighter;
+    font-family: sans-serif;
+    font-weight: bold;
   }
-
-
 
   ul {
     padding: 0;
