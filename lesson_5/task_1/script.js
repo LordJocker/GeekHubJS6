@@ -68,7 +68,7 @@ function archiveItem() {
 function showArchive() {
     if (document.getElementById('archivedList').style.display == "none") {
         document.getElementById('archivedList').style.display = "block";
-        document.getElementById('showButton').innerText = 'Close archive';
+        document.getElementById('showArchive').innerText = 'Close archive';
     }
     else {
         document.getElementById('archivedList').style.display = "none";
