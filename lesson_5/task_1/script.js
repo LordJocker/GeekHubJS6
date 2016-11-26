@@ -40,8 +40,8 @@ function removeItem() {
 }
 
 function clicked() {
+    if (event.target.tagName == 'INPUT') return;
     el = event.toElement;
-    if (this.tagName == 'input') return;
     [].forEach.call(el.parentElement.children, function (el) {
         el.id = ('');
         el.classList.remove('edit');
