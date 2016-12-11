@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  display: block;
+  width: 600px;
+  margin: 0 auto;
+}
+
+ul li {
+  list-style-type: none;
+  background: honeydew;
+}
+
+.cbx {
+  width: 20px;
+  height: 20px;
+}
+
+.delete-btn {
+  width: 20px;
+  height: 20px;
+}
+
+#sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+#sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
+#sortable li span { position: absolute; margin-left: -1.3em; }
