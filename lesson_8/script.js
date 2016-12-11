@@ -3,15 +3,16 @@ $(document).ready(function() {
     $('#btn').click(function newGame() {
         var arr = randomize();
         for (var i = 0; i <= 15; i++) {
-            $('#t' + i + '').text(arr[i]);
+            $('#t' + i).text(arr[i]);
         }
     });
 
     $('td').click(function () {
-        console.log($('.empty').toggleClass('empty'));
-        console.log($(this).toggleClass('empty'));
+        var nowEmpty = $(this).text();
+        $(this).text('');
+        $('.empty').toggleClass('empty').text(nowEmpty);
+        $(this).toggleClass('empty');
     });
-
 
     function randomize() {
         var i, arr = [], res = [];
