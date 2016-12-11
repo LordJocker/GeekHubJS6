@@ -7,13 +7,16 @@ $(document).ready(function() {
         }
     });
 
-
+    $('td').click(function () {
+        console.log($('.empty').toggleClass('empty'));
+        console.log($(this).toggleClass('empty'));
+    });
 
 
     function randomize() {
         var i, arr = [], res = [];
         for (i = 1; i <= 15; i++ ) arr.push(i);
-        for (i = 0; i < 15; i++) res.push(arr.splice(Math.floor(Math.random() * (arr.length)), 1)[0])
+        for (i = 0; i < 15; i++) res.push(arr.splice(Math.floor(Math.random() * (arr.length)), 1)[0]);
         return res;
     }
 
