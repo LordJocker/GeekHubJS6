@@ -1,30 +1,94 @@
 $(document).ready(function() {
-    $('#new-item').keypress(function(e){
-        if (e.which === 13) {
-            if ($(this).val()) {
-                addItem();
-                $(this).val("");
-            }
+    var toDoList = $('#toDoList');
 
+    $('#new-item').keypress(function(e){
+        if (e.keyCode === 13) {
+            if ($(this).val()) {
+                var task = $(this).val();
+                this.value='';
+                var taskId = 0;
+                toDoList.children().each(function (index, el) {
+                    var checkId = $(el).attr('task-id').slice(9);
+                    if (checkId > taskId) {
+                        taskId = checkId;
+                    }
+                });
+                taskId++;
+
+                localStorage.setItem('task-id: ' + taskId, task);
+
+                var template = '<li><input type="checkbox" class="cbx">' +
+                    task + '<button class="del-btn">x</button></br></li>';
+
+                $(template).addClass('ui-state-default')
+                    .attr('task-id', taskId)
+                    .appendTo('#toDoList');
+            }
         }
     });
 
-    function addItem() {
-        var value = $('#new-item').val();
-        $('ul').append('<li class="ui-state-default"><input type="checkbox" class="cbx">' + value + '<button class="delete-btn">x</button></br></li>');
-    };
+    function showStorageTasks() {
+        if (!!localStorage.length)
+            for (var i = 0; i < localStorage.length; i++){
+                var key = localStorage.key(i);
+                var task = localStorage.getItem(key);
+                var template = '<li><input type="checkbox" class="cbx">' +
+                    task + '<button class="del-btn">x</button></br></li>';
+                if (key.slice(0,4) == 'task')
+                    $(template)
+                        .addClass('ui-state-default')
+                        .attr('task-id', key)
+                        .appendTo('#toDoList');
+            }
+    }
 
-    $(document).on('click', '.complete-btn', function(){
-        $(this).toggleClass('completed');
+    showStorageTasks();
+
+    $(document).on('click', '.cbx', function(){
+        $(this).parent().toggleClass('completed');
     });
 
-    $(document).on('click', '.delete-btn', function () {
+    $(document).on('click', '.del-btn', function () {
+        localStorage.removeItem($(this).parent().attr('task-id'));
         $(this).parent().remove();
-    })
+    });
 
     $( function() {
-        $("#sortable")
+        $("#toDoList")
             .sortable()
             .disableSelection();
     } );
+
+    $(document).on('click', '#all-btn', function () {
+        toDoList.children().each(function (){
+            $(this).removeClass('hidden');
+        });
+    });
+
+    $(document).on('click', '#active-btn', function () {
+        toDoList.children().each(function () {
+            if ($(this).hasClass('completed'))
+                $(this).addClass('hidden');
+            else
+                $(this).removeClass('hidden');
+        })
+    });
+
+    $(document).on('click', '#completed-btn', function () {
+        toDoList.children().each(function () {
+            if (!$(this).hasClass('completed'))
+                $(this).addClass('hidden');
+            else
+                $(this).removeClass('hidden');
+        });
+    });
+
+    $(document).on('click', '#cc-btn', function () {
+        toDoList.children().each(function () {
+            if ($(this).hasClass('completed')) {
+                $(this).remove();
+                localStorage.removeItem($(this).attr('task-id'));
+            }
+        });
+    });
 });
