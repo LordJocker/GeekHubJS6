@@ -1,12 +1,12 @@
 $(document).ready(function() {
     var toDoList = $('#toDoList');
+    var taskId = 0;
 
     $('#new-item').keypress(function(e){
         if (e.keyCode === 13) {
             if ($(this).val()) {
                 var task = $(this).val();
                 this.value='';
-                var taskId = 0;
                 toDoList.children().each(function (index, el) {
                     var checkId = $(el).attr('task-id').slice(9);
                     if (checkId > taskId) {
