@@ -6,15 +6,14 @@ function initMap() {
     });
     var geocoder = new google.maps.Geocoder();
 
-    $('#submit')
-        .click(function () {
+    $('#submit').click(function () {
         geocodeAddress(geocoder, map);
-    })
-        .keypress(function (e) {
+    });
+
+    $('#address').keypress(function (e) {
         if (e.keyCode === 13)
             geocodeAddress(geocoder, map);
     });
-
 }
 
 function geocodeAddress(geocoder, resultsMap) {

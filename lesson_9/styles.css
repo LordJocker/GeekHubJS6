@@ -1,5 +1,6 @@
 html, body {
     height: 100%; margin: 0; padding: 0;
+    color: #3bbfce;
 }
 
 #map {
@@ -11,3 +12,4 @@ input {
     margin-left: 10px;
     margin-top: 20px;
 }
+
