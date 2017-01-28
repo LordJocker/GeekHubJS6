@@ -1,9 +1,11 @@
 var map;
+
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: 49.4436868, lng: 32.0607233},
         zoom: 18
     });
+
     var geocoder = new google.maps.Geocoder();
 
     $('#submit').click(function () {
