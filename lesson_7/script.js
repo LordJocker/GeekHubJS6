@@ -53,7 +53,7 @@ $(document).ready(function() {
         $(this).parent().remove();
     });
 
-    $( function() {
+    $(function() {
         $("#toDoList")
             .sortable()
             .disableSelection();
