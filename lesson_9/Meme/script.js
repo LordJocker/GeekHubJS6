@@ -11,7 +11,11 @@ $(function() {
                 bottom: $('.bottom-text').val()
             },
             success: function(data) {
-                $('.form').append(data);
+              console.dir(data);
+              $('.form').append('<img>{{ data }}</img>');
+            },
+            error: function (error) {
+              alert(error);
             },
             beforeSend: function(xhr) {
                 xhr.setRequestHeader("X-Mashape-Authorization", "NejroNDmBMmshIBxjFIyQBfXJWQcp1SYFfmjsn5H1IsQTpzt8G");
