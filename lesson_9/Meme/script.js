@@ -11,8 +11,7 @@ $(function() {
                 bottom: $('.bottom-text').val()
             },
             success: function(data) {
-              console.dir(data);
-              $('.form').append('<img>{{ data }}</img>');
+              $('.form').append(data);
             },
             error: function (error) {
               alert(error);
