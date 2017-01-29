@@ -18,8 +18,11 @@ input {
     margin-top: 20px;
 }
 
-h3 {
-    margin-left: 10px;
+h1 {
+    position: absolute;
+    top: 40%;
+    left: 35%;
+    color: white !important;
 }
 
 a {
