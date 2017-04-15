@@ -3,7 +3,8 @@ $(document).ready(function() {
     $('#btn').click(function newGame() {
         var arr = randomize();
         for (var i = 0; i <= 15; i++) {
-            $('#t' + i).text(arr[i]);
+            $('#t' + i).text(arr[i]).removeClass();
+            $('#t15').text('').addClass('empty');
         }
     });
 
@@ -20,6 +21,4 @@ $(document).ready(function() {
         for (i = 0; i < 15; i++) res.push(arr.splice(Math.floor(Math.random() * (arr.length)), 1)[0]);
         return res;
     }
-
 });
-

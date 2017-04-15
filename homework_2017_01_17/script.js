@@ -28,7 +28,7 @@ $(document).ready(function() {
     });
 
     function showStorageTasks() {
-        if (!!localStorage.length)
+        if (localStorage.length)
             for (var i = 0; i < localStorage.length; i++){
                 var key = localStorage.key(i);
                 var task = localStorage.getItem(key);

@@ -6,8 +6,8 @@
 a {
     display: block;
     margin: 10px;
-    color: white !important;
-    background: #94B8DA !important;
+    color: white;
+    background: #94B8DA;
     width: 150px;
     padding: 10px;
     text-align: center;
@@ -16,18 +16,18 @@ a {
 }
 
 a:hover {
-    background: #77D9C9 !important;
-    text-decoration: none !important;
+    background: #77D9C9;
+    text-decoration: none;
 }
 
 form {
     position: absolute;
-    top: 25%;
+    top: 0;
     left: 35%;
 }
 
-.submit-btn {
-    margin-top: 10px;
+input {
+    margin-top: 3px;
     padding: 3px 5px;
 }
 

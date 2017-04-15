@@ -8,6 +8,7 @@ td {
     background: coral;
     width: 70px;
     height: 70px;
+    cursor: pointer;
 }
 
 table {
