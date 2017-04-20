@@ -5,16 +5,16 @@ var objectId = require('mongodb').ObjectID;
 var assert = require('assert');
 
 // var url = 'mongodb://127.0.0.1:27017/test'; //for local test
-var url = 'mongodb://user:123456@ds135689.mlab.com:35689/todolist'; //for production
+var url = 'mongodb://user:123@ds111771.mlab.com:11771/todomongol'; 
 
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   // res.render('index', { title: 'toDoList' });
-  res.redirect('/get-data');
+  res.redirect('/index');
 });
 
-router.get('/get-data', function (req, res, next) {
+router.get('/index', function (req, res, next) {
   var resultArray = [];
     mongo.connect(url, function (err, db) {
         assert.equal(null, err);
@@ -43,7 +43,7 @@ router.post('/insert', function (req, res, next) {
           db.close();
       });
   });
-  res.redirect('/get-data');
+  res.redirect('/index');
 });
 
 router.post('/update', function (req, res, next) {
@@ -62,7 +62,7 @@ router.post('/update', function (req, res, next) {
             db.close();
         });
     });
-    res.redirect('/get-data');
+    res.redirect('/index');
 });
 
 router.post('/moveup', function (req, res, next) {
@@ -82,7 +82,7 @@ router.post('/moveup', function (req, res, next) {
             }
         db.close();
         });
-    res.redirect('/get-data');
+    res.redirect('/index');
 });
 
 router.post('/delete', function (req, res, next) {
@@ -111,7 +111,7 @@ router.post('/deldone', function (req, res, next) {
         }
         db.close();
     });
-    res.redirect('/get-data');
+    res.redirect('/index');
 });
 
 module.exports = router;
