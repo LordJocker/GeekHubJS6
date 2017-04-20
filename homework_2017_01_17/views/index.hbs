@@ -1,0 +1,25 @@
+<header>
+    <h2>todos</h2>
+    <input name="task" id="input" autofocus placeholder="What needs to be done?">
+    <button id="add-button" onclick="add()">Add</button>
+</header>
+    
+<div id="list">
+    {{# each items }}
+        <div class="task {{# if this.completed}} done {{else}} false {{/if}}" id = "{{this._id}}" data-position = {{ this.position}}>
+            <input type="checkbox" class="check-box" data_id = {{this._id}}></input>
+            <p class="task-data" data_id = {{this._id}}>{{ this.task }}</p>
+            <button class="close" data_id = {{this._id}}>x</button>
+        </div>
+    {{/each}}
+</div>
+
+<div class="wrapper-button">
+    <div class="count"><span id="count-tasks"></span> items left</div>
+    <div class="btn-blok-1">
+        <button class="btn" onclick="allTask()">All</button>
+        <button class="btn" onclick="showActive()">Active</button>
+        <button class="btn" onclick="showCompleted()">Completed</button>
+        <button class="btn" onclick="clearCompleted()">Clear completed</button>
+    </div>
+</div>
