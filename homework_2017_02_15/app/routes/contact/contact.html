@@ -1,0 +1,28 @@
+<h3>You can contact me with this form</h3>
+<form name="form" ng-submit="submitForm()" method="post" class="contact-form">
+
+
+        <div>
+            <label>Name</label>
+            <input type="text" name="name" ng-model="userData.name" required>
+            <p ng-show="form.name.$invalid && !form.name.$pristine">You name is required.</p>
+        </div>
+      
+
+        <div>
+            <label>Text</label>
+            <input type="text" name="username" class="form-control" ng-model="userData.text" ng-minlength="2" ng-maxlength="100">
+            <p ng-show="form.username.$error.minlength">Message is too short.</p>
+            <p ng-show="form.username.$error.maxlength">Message is too long.</p>
+        </div>
+        
+
+        <div class="form-group" ng-class="{ 'has-error' : form.email.$invalid && !form.email.$pristine }">
+            <label>Email</label>
+            <input type="email" name="email" ng-model="userData.email">
+            <p ng-show="form.email.$invalid && !form.email.$pristine">Enter a valid email.</p>
+        </div>
+        
+        <button type="submit" ng-disabled="form.$invalid">Submit</button>
+
+</form>
