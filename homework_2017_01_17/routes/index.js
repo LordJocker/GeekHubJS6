@@ -4,7 +4,7 @@ var mongo = require('mongodb').MongoClient;
 var objectId = require('mongodb').ObjectID;
 var assert = require('assert');
 
-// var url = 'mongodb://127.0.0.1:27017/test'; //for local test
+// var url = 'mongodb://127.0.0.1:3000/test'; //for local test
 var url = 'mongodb://user:123@ds111771.mlab.com:11771/todomongol'; 
 
 
